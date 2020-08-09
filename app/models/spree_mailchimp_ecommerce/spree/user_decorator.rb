@@ -29,4 +29,4 @@ module SpreeMailchimpEcommerce
     end
   end
 end
-Spree::User.prepend(SpreeMailchimpEcommerce::Spree::UserDecorator)
+Spree.user_class.prepend(SpreeMailchimpEcommerce::Spree::UserDecorator)
