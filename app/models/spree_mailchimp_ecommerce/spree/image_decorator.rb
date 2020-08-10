@@ -2,7 +2,7 @@ module SpreeMailchimpEcommerce
   module Spree
     module ImageDecorator
       def self.prepended(base)
-        base.after_create :update_mailchimp_product
+        base.after_create :update_mailchimp_product, if: :viewable_id?
         base.after_update :update_mailchimp_product
         base.after_destroy :update_mailchimp_product
       end
